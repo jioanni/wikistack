@@ -2,10 +2,10 @@
   "name": "wikistack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -e html, js, css /Users/matthewtalbot/wikistack/app.js"
+    "start": "nodemon -e /Users/matthewtalbot/wikistack/app.js"
   },
   "author": "",
   "license": "ISC",
