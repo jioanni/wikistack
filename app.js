@@ -7,7 +7,7 @@ const volleyball = require('volleyball');
 const app = express();
 
 app.use(volleyball);
-
+app.use(express.static('wikistack'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
