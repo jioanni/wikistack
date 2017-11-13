@@ -34,5 +34,5 @@ models.db.sync({force: true})
 
 
 app.get("/test", function(req, res) {
-    res.send("This is only a test")
+    res.send("WELCOME TO THE JUNGLE (also the homepage)");
 })

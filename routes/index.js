@@ -5,7 +5,7 @@ const usersRouter = require('./users');
 
 
 router.get('/', function(req, res) {
-    res.send("This is a placeholder!");
+    res.send("WELCOME TO THE JUNGLE (also the homepage)");
 })
 
 router.use('/wiki', wikiRouter);
