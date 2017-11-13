@@ -6,23 +6,18 @@ const User = models.User;
 
 
 router.post('/', function(req, res, next) {
-    
-      // STUDENT ASSIGNMENT:
-      // add definitions for `title` and `content`
+
     
       var page = Page.build({
         title: req.body.title,
-        urlTitle: req.body.title,
         content: req.body.content,
         status: req.body.status,
     });
     
-      // STUDENT ASSIGNMENT:
-      // make sure we only redirect *after* our save is complete!
-      // note: `.save` returns a promise or it can take a callback.
+      
       page.save()
-      .then(res.redirect('/'));
-      // -> after save -> res.redirect('/');
+      .then(res.json(req.body));
+
     });
 
 router.get('/', function(req, res) {

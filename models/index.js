@@ -12,7 +12,7 @@ var Page = db.define('page', {
     urlTitle: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: "URL Default",
+        defaultValue: "URLDefault",
         
     },
     content: {
@@ -23,17 +23,19 @@ var Page = db.define('page', {
     status: {
         type: Sequelize.ENUM('open', 'closed')
     }
-},  {getterMethods: {
+},  {
+    getterMethods: {
     route() {
         return "wiki/" + this.urlTitle  
     }}
+   
 });
 
-Page.hook("beforeValidate", (title) => {
-    if (title) {
-      return title.replace(/\s+/g, '_').replace(/\W/g, '');
+Page.hook("beforeValidate", (page) => {
+    if (page.title) {
+     page.urlTitle = page.title.replace(/\s+/g, '_').replace(/\W/g, '');
     } else {
-      return Math.random().toString(36).substring(2, 7);
+     page.urlTitle =  Math.random().toString(36).substring(2, 7);
     }
   })
 
