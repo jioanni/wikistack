@@ -12,6 +12,7 @@ app.use(volleyball);
 app.use(express.static('wikistack'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use("/", router);
 
 var env = nunjucks.configure('views', {noCache: true});
 // have res.render work with html files
